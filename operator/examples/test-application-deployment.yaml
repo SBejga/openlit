@@ -207,7 +207,7 @@ data:
         logger.info("🤖 Testing OpenAI API calls...")
         
         # Check if OpenAI API key is available
-        api_key = "sk-proj-1234567890"
+        api_key = os.getenv("OPENAI_API_KEY") or ""
         if not api_key:
             logger.warning("⚠️  OPENAI_API_KEY not found, skipping OpenAI tests")
             logger.info("💡 To test OpenAI instrumentation, provide an API key in the secret")
